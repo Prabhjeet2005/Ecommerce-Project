@@ -24,6 +24,11 @@ const userSchema = new Schema({
 });
 
 userSchema.statics.createUser = async (userData) => {
+	const {username} = userData;
+	const duplicateUser = await UserModel.findUser(username);
+	if(duplicateUser){
+		errorCreator("User Already Exists",401)
+	}
 	const user = await UserModel.create(userData);
 	return user;
 };
