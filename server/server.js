@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use("/user",userRouter)
-// app.use("/cart",cartRouter)
+app.use("/cart",cartRouter)
 app.use(errorHandler)
 
 const PORT = process.env.PORT;
