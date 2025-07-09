@@ -16,6 +16,6 @@ cartRouter.post("/addToCart", authMiddleware, addToCartController);
 cartRouter.put("/clearCart", authMiddleware, clearCartController);
 cartRouter.patch("/increment",authMiddleware, incrementController);
 cartRouter.patch("/decrement",authMiddleware,decrementController);
-cartRouter.post("/removeFromCart", authMiddleware, removeFromCartController);
+cartRouter.patch("/removeFromCart", authMiddleware, removeFromCartController);
 
 module.exports = cartRouter;
