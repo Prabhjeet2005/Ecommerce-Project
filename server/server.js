@@ -6,6 +6,7 @@ const cors = require("cors")
 require("./utils/dbConnection")
 const cartRouter = require("./routers/cartRouter")
 const userRouter = require("./routers/userRouter")
+const productRouter = require("./routers/productRouter")
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(cookieParser())
 
 app.use("/user",userRouter)
 app.use("/cart",cartRouter)
+app.use("/product",productRouter)
 app.use(errorHandler)
 
 const PORT = process.env.PORT;
